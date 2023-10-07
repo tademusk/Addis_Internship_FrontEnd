@@ -1,11 +1,14 @@
 import Music from './components/Music';
 import Navbar from './components/Navbar';
+import { MusicProvider } from './components/musicContext';
 import './App.css';
 
 import styles from './style';
 
 export default function App() {
   return (
+
+   <MusicProvider>
     <div className=" w-full">
 
       <div id='navebar' className={`${styles.flexStart}  ${styles.paddingNav} z-20 fixed w-full top-2 font-poppins`}>
@@ -14,14 +17,12 @@ export default function App() {
            </div>
         </div>
 
-        
         <div id='home' className={`${styles.flexStart} ${styles.paddingX} ${styles.paddingY} font-poppins`}>
            <div className={`${styles.boxWidth}`}>
               <Music />
            </div>
         </div>
-        
-
     </div>
+    </MusicProvider>
   )
 }
